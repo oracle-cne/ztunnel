@@ -12,7 +12,7 @@ FROM container-registry.oracle.com/os/oraclelinux:9-slim
 ARG istio_version
 
 # COPY LICENSE NOTICE THIRD_PARTY_LICENSES.txt olm/SECURITY.md /usr/share/licenses/
-COPY --from=builder /ztunnel/LICENSE /ztunnel/olm/SECURITY.md /ztunnel/ATTRIBUTION-HELPER-DEPS /ztunnel/THIRD_PARTY_LICENSES.txt /usr/share/licenses/
+COPY --from=builder /ztunnel/LICENSE /ztunnel/olm/SECURITY.md /ztunnel/THIRD_PARTY_LICENSES.txt /usr/share/licenses/
 COPY --from=builder /ztunnel/out/rust/release/ztunnel /usr/local/bin/ztunnel
 
 RUN microdnf update -y && \
